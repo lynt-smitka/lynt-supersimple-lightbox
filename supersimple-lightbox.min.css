@@ -4,3 +4,4 @@
 .sl-overlay{background: #000}
 .sl-wrapper .sl-navigation button {color: #fff}
 .sl-wrapper .sl-close, .sl-wrapper .sl-counter {color: #fff}
+.sl-wrapper .button:hover {text-decoration:none}
