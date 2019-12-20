@@ -4,5 +4,5 @@
 .sl-overlay{background: #000}
 .sl-wrapper .sl-navigation button {color: #fff}
 .sl-wrapper .sl-close, .sl-wrapper .sl-counter {color: #fff}
-.sl-wrapper .button:hover {text-decoration:none}
-.admin-bar .sl-wrapper .sl-close, .admin-bar .sl-wrapper .sl-counter {top: 62px;}
+.sl-wrapper button:hover, .sl-wrapper button:focus {text-decoration:none}
+.admin-bar .sl-wrapper .sl-close, .admin-bar .sl-wrapper .sl-counter {top: 62px}
