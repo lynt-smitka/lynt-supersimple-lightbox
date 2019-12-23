@@ -25,12 +25,10 @@ if (!class_exists("LyntSuperSimpleLightbox")) {
         
         public function load_assets() {
             
-            if ( ! has_block( 'core/gallery') ) {
-                return;
+            if ( has_block( 'core/image') || has_block( 'core/gallery') ) {
+                wp_enqueue_script('supersimplelightbox-js',  plugins_url('supersimple-lightbox.min.js',  __FILE__), array('jquery'), '1.17.3', true);
+                wp_enqueue_style ('supersimplelightbox-css', plugins_url('supersimple-lightbox.min.css', __FILE__));
             }
-
-            wp_enqueue_script('supersimplelightbox-js',  plugins_url('supersimple-lightbox.min.js',  __FILE__), array('jquery'), '1.17.3', true);
-            wp_enqueue_style ('supersimplelightbox-css', plugins_url('supersimple-lightbox.min.css', __FILE__));
         }
 
         public function load_editor_assets() {
