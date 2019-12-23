@@ -3,7 +3,7 @@
  * Plugin Name: Lynt SuperSimple Lightbox
  * Plugin URI: https://github.com/lynt-smitka/lynt-supersimple-lightbox
  * Description: Simple & light lightbox for Gutenberg block images and galleries
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Vladimir Smitka
  * Author URI: https://lynt.cz
  * License: GPL2
