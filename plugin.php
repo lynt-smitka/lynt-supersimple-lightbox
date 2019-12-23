@@ -16,19 +16,34 @@ if (! defined("WPINC")) {
 
 if (!class_exists("LyntSuperSimpleLightbox")) {
 
-class LyntSuperSimpleLightbox {
+    class LyntSuperSimpleLightbox {
 
-    function __construct() {
-    add_action('wp_enqueue_scripts',    array($this, 'load_assets'));
-    }
-    
-    public function load_assets() {
-        wp_enqueue_script('supersimplelightbox-js',  plugins_url('supersimple-lightbox.min.js',  __FILE__), array('jquery'), '1.17.3', true);
-        wp_enqueue_style ('supersimplelightbox-css', plugins_url('supersimple-lightbox.min.css', __FILE__));
-    }
-}
+        function __construct() {
+            add_action('wp_enqueue_scripts',    array($this, 'load_assets'));
+            add_action( 'enqueue_block_editor_assets', array($this, 'load_editor_assets'));
+        }
+        
+        public function load_assets() {
+            
+            if ( ! has_block( 'core/gallery') ) {
+                return;
+            }
 
-new LyntSuperSimpleLightbox;
+            wp_enqueue_script('supersimplelightbox-js',  plugins_url('supersimple-lightbox.min.js',  __FILE__), array('jquery'), '1.17.3', true);
+            wp_enqueue_style ('supersimplelightbox-css', plugins_url('supersimple-lightbox.min.css', __FILE__));
+        }
+
+        public function load_editor_assets() {
+            wp_enqueue_script(
+                'supersimplelightbox-js',
+                plugins_url('supersimple-lightbox-admin.js', __FILE__),
+                [ 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor' ],
+            );
+        }
+
+    }
+
+    new LyntSuperSimpleLightbox;
   
 } 
  
