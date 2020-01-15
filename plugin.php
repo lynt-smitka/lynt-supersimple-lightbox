@@ -35,7 +35,7 @@ if (!class_exists("LyntSuperSimpleLightbox")) {
             wp_enqueue_script(
                 'supersimplelightbox-js',
                 plugins_url('supersimple-lightbox-admin.js', __FILE__),
-                [ 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor' ],
+                array('wp-element', 'wp-blocks', 'wp-components', 'wp-editor')
             );
         }
 
